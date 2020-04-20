@@ -1,0 +1,258 @@
+@CHARSET "UTF-8";
+@import url("img_bt/iconfont.css");
+@import url("img_bt/skinicon.css");
+@import url("img_bt/arrow_fontclass.css");
+body{
+	font-family:'Microsoft Yahei', verdana !important;
+}
+
+a,
+a:active,
+a:hover {
+	text-decoration: none !important;
+}
+
+#brand-logo{
+	margin-left:0px;padding-top:0px; padding-bottom:0px;
+}
+
+#brand-name{
+	color:#FFFFFF;
+}
+
+.userName{
+	color:rgba(0,0,0,.8);
+}
+.top_menu{
+	color:#20A0FF;
+	
+}
+
+.top_menu > i{
+	font-size:18px;
+	font-weight:bold;
+}
+
+.default-header-bar{
+	/*background-image:url("img_red/bg.jpg");*/
+	background-color:#FFFFFF
+}
+.frame-all{
+	overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-width: 1103px;
+    _width: 100%;
+    _height: 630px;
+
+}
+
+.navbar {
+	min-height: 50px !important;
+}
+.frame-asize{
+	overflow: hidden;
+	top: 50px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 9;
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    border-right:solid #E7E6E6 1px;
+    OVERFLOW-Y: auto; OVERFLOW-X:hidden;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.frame-asize-mini{
+	overflow: hidden;
+	top: 50px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 9;
+    position: absolute;
+    width: 51px;
+    height: 100%;
+    border-right:solid #E7E6E6 1px;
+    OVERFLOW-Y: auto; OVERFLOW-X:hidden;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    display:none;
+}
+
+.frame-main{
+	background-color:#FFFFFF;
+	right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    top: 50px;
+    left: 300px;
+    bottom: 0px;
+    z-index: 1;
+    background: #fff;
+    position: absolute;    
+    right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.frame-main-max{
+	background-color:#FFFFFF;
+	right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    top: 50px;
+    left: 51px;
+    bottom: 0px;
+    z-index: 1;
+    background: #fff;
+    position: absolute;    
+    right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.module-aside {
+    padding-top: 10px;
+    height: 100%;
+    OVERFLOW-Y: auto; OVERFLOW-X:hidden;
+    
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+.module-aside{
+	padding-top: 0px;
+    height: 100%;
+    background-color:#001529;
+}
+.menu-list{
+	padding-left: 0px;
+	margin-bottom:0px;
+	background-color:#000C17;
+}
+.menu-list > li >a{
+	display: block;
+	color: #cccccc;
+    text-decoration: none;
+    width:100%;
+    margin-left:0px;    
+    height:35px;
+    line-height:35px;
+}
+
+.menu-list > li >a:hover{
+	background-color: #20A0FF; 
+	color: #fff;
+}
+
+.menu-list > li.active > a {
+    color: #fff;
+    background-color: #20A0FF;
+}
+
+
+.list-item{
+	height:40px;
+	line-height:40px;	
+}
+
+
+
+
+.menubg{
+	background-color: #00152A;
+	height:40px;
+	line-height:40px;
+	color:#ffffff;
+	border-bottom: solid #00152A 1px;
+	
+}
+
+.mactive > i{
+	/*border-left:solid #E13524 3px;*/
+	
+}
+
+li.menubg > span{
+	  display: inline-block;
+}
+
+.item-title{
+	width:215px;
+	font-size:14px;
+	margin-left:5px;
+}
+.item-sub{
+	padding-left: 40px;	
+	font-size:12px;
+}
+
+.picon{
+	padding-left: 20px;
+}
+
+.picononly{
+	color:#fff;
+	height:40px;
+	line-height:40px;
+}
+
+.item-title1 active{
+	background-color: #9EA7B4;
+}
+
+::-webkit-scrollbar  
+{  
+    width: 3px;  
+    height:5px;
+    background-color: #242529;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 5px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 5px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #AAAAAA;  
+}
+
+.navbar-brand {
+	padding: 0px 0px !important;	
+	line-height: 50px !important;
+}
+
+.container-fluid {
+	padding-left: 0px !important;
+}
+
+.navbar-header {
+   background-color:#001C3E;
+   height:51px ;	
+}
+
+.container-fluid {
+	box-shadow: rgba(0, 0, 0, 0.1) -1px 2px 4px !important;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px  !important; 
+    padding-bottom: 0px  !important;
+    line-height: 50px !important;
+}
+
+.navbar-static-top {
+    border-width: 0 0 0px !important;
+}

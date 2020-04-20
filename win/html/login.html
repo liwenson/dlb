@@ -1,0 +1,82 @@
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- app样式 -->
+		<link rel="stylesheet" href="css/app.css">
+		<!--elementUI样式-->
+		<link rel="stylesheet" href="js/lib2.4.1/index.css">
+		<!-- 先引入 Vue -->
+		<script src="js/lib2.4.1/vue.js"></script>
+		<!-- jquery -->
+		<script src="js/bootstrap/js/jquery.mini.js"></script>
+		<script src="js/app.js"></script>
+		<!-- 引入elementUI组件库 -->
+		<script src="js/lib2.4.1/index.js"></script>
+		<title>登录</title>
+	</head>
+	<style type="text/css">
+		.el-tree-node__label {
+			font-size: 12px;
+		}
+	</style>
+
+	<body>
+		<div>
+			<div class="app_title">
+				<div class="app_title_show" Style="float:left;">登录</div>
+				<div style="float:right">
+					
+				</div>
+			</div>
+			<div class="app_line"></div>
+
+			<div  id="app"  v-loading.fullscreen.lock="loading">
+				<div style="width: 500px;height:50px;margin-top:200px;margin-left:auto;margin-right:auto">
+					<el-input type="password" placeholder="登录密码" v-model="password">
+				</div>
+				<div style="width:500px;height:50px;margin-top:10px;margin-left:auto;margin-right:auto;text-align: center;">
+					<el-button type="primary" style="width:500px;" @click="submit">登录</el-button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var timer;
+		var vm = new Vue({
+			data: {
+				loading: false,
+				password: ""
+			},
+			el: '#app',
+			methods: {
+				submit: function(){
+					var _self = this
+					if(_self.password==""){
+						_self.$message.error("请输入密码！");
+						return;
+					}
+
+					data = {
+						password: _self.password
+					}
+
+					postData("api_checkPassword",data,_self,function(response){
+						if(response.state=="success"){
+							document.location = "index.html";
+							//_self.$message.error(response.message)
+						}else{
+							_self.$message.error(response.message);
+						}
+					})
+				}
+
+			},
+			created: function () {
+				var _self = this;
+			}
+		});
+	</script>
+
+	</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <span th:fragment="commonOnLoadJs">
+        <script src="../../js/element-2.4.1/dist/vue.min.js"></script>
+        <script src="../../js/element-2.4.1/lib/index.js"></script>
+        <script src="../../js/axios/axios.min.js"></script>
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            var contextPath = /*[[@{/}]]*/ '';
+            /*]]>*/
+
+            var initAxiosInterceptors = function() {
+                axios.defaults.baseURL = contextPath;
+                /**
+                 * axios请求拦截器
+                 *
+                 * @author heyingcheng
+                 * @date 2018/9/24 12:46
+                 * @return
+                 */
+                axios.interceptors.request.use(function (config) {
+                    console.log("计入请求拦截");
+                    loadingInstance = Loading.service({})
+                    return config;
+                }, function (error) {
+                    loadingInstance.close()
+                    vue.$message.error({
+                        showClose: true,
+                        message: ERROR_MESSAGE.ERROR_404,
+                        duration: 5 * 1000,
+                        type: 'error'
+                    });
+                    return Promise.reject(error);
+                });
+
+                /**
+                 * axios响应拦截器
+                 *
+                 * @author heyingcheng
+                 * @date 2018/9/24 12:46
+                 * @return
+                 */
+                axios.interceptors.response.use(function (response) {
+                    console.log("计入响应拦截");
+                    if(response.status && response.status == 200 && response.data.code != 0) {
+                        loadingInstance.close()
+                        var message = ERROR_MESSAGE.ERROR_UNKNOWN;
+                        if (response.data.message) {
+                            message = ERROR_MESSAGE.ERROR_INFO + response.data.message;
+                        }
+                        vue.$message.error({
+                            showClose: true,
+                            message: message,
+                            duration: 5 * 1000,
+                            type: 'error'
+                        });
+                        return Promise.reject(message);
+                    }
+                    return response;
+                }, function (error) {
+                    var message = "";
+                    if (error.response) {
+                        if (error.response.status == 500) {
+                            if (error.response.data && error.response.data.message) {
+                                message = ERROR_MESSAGE.ERROR_INFO + error.response.data.message;
+                            }
+                        } else if (error.response.status == 504 || error.response.status == 404) {
+                            message = ERROR_MESSAGE.ERROR_500;
+                        } else if (error.response.status == 403) {
+                            message = ERROR_MESSAGE.ERROR_403;
+                        } else {
+                            message = ERROR_MESSAGE.ERROR_UNKNOWN;
+                        }
+                    } else {
+                        message = ERROR_MESSAGE.ERROR_404;
+                    }
+                    vue.$message.error({
+                        showClose: true,
+                        message: message,
+                        duration: 5 * 1000,
+                        type: 'error'
+                    });
+                    return Promise.reject(error);
+                });
+            }
+            initAxiosInterceptors();
+        </script>
+    </span>
+</html>

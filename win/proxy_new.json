@@ -1,0 +1,1 @@
+{"test":{"test02":{"state":"on","weight":"10","cweight":0,"health":"Y","ip":"172.16.100.166:8882"},"test01":{"health":"Y","weight":"10","ip":"172.16.100.166:8881","state":"on","cweight":0}},"wms":{}}

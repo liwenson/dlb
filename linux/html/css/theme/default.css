@@ -1,0 +1,172 @@
+@import url("img_red/iconfont.css");
+@import url("img_red/skinicon.css");
+body{
+	font-family:Tahoma,微软雅黑,"Microsoft YaHei",宋体,SimSun,sans-serif !important;
+}
+
+a,
+a:active,
+a:hover {
+	text-decoration: none !important;
+}
+
+#brand-logo{
+	margin-left:15px;padding-top:0px; padding-bottom:0px;
+}
+
+#brand-name{
+	color:#FFFFFF;
+}
+
+.userName{
+	color:#FFFFFF;
+}
+
+.default-header-bar{
+	background-color:#333333;
+}
+.frame-all{
+	overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-width: 1103px;
+    _width: 100%;
+    _height: 630px;
+
+}
+
+.frame-asize{
+	overflow: hidden;
+	top: 50px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 9;
+    position: absolute;
+    width: 194px;
+    height: 100%;
+    border-right:solid #E7E6E6 1px;
+    OVERFLOW-Y: auto; OVERFLOW-X:hidden;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+.frame-main{
+	background-color:#FFFFFF;
+	right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    top: 50px;
+    left: 194px;
+    bottom: 0px;
+
+    z-index: 1;
+    background: #fff;
+
+    position: absolute;
+    
+    right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.module-aside {
+    padding-top: 10px;
+    height: 100%;
+    OVERFLOW-Y: auto; OVERFLOW-X:hidden;
+    
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+.module-aside{
+	padding-top: 0px;
+    height: 100%;
+}
+.menu-list{
+	padding-left: 0px;
+	margin-bottom:0px;
+}
+.menu-list > li >a{
+	display: block;
+	color: #565d69;
+    text-decoration: none;
+    width:168px;
+    margin-left:10px;    
+    height:35px;
+    line-height:35px;
+}
+
+.menu-list > li >a:hover{
+	background-color: #eaeaea; 
+}
+
+.menu-list > li.active > a {
+    color: #fff;
+    background-color: #20A0FF;
+}
+
+
+.list-item{
+	height:40px;
+	line-height:40px;	
+}
+
+
+
+
+.menubg{
+	background-color: #F5F5F5;
+	height:40px;
+	line-height:40px;
+	color:#565d69;
+	border-bottom: solid #DCDCDC 1px;
+	
+}
+
+li.menubg > span{
+	  display: inline-block;
+}
+
+.item-title{
+	width:120px;
+	font-size:14px;
+	margin-left:5px;
+}
+.item-sub{
+	padding-left: 40px;	
+	font-size:12px;
+}
+
+.picon{
+	padding-left: 20px;
+}
+
+.item-title1 active{
+	background-color: #9EA7B4;
+}
+
+::-webkit-scrollbar  
+{  
+    width: 5px;  
+    height:5px;
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 5px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 5px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #AAAAAA;  
+}
