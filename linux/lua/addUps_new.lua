@@ -99,48 +99,74 @@ local upss = dynupszone:get("myServers");
 local upsteamTable={}
 
 if op=="add" then
-	upsteamTable = cjson.decode(upss)
-	local map = {}
-	-- 判断 loadName 在共享区域是否存在
-	if upsteamTable[loadName]~=nil then
-		local server=upsteamTable[loadName]
+    upsteamTable = cjson.decode(upss)
+    local map = {}
+    -- 判断 loadName 在共享区域是否存在
+    if upsteamTable[loadName]~=nil then
+        local server=upsteamTable[loadName]
 
-		-- 判断 主机是否存在
-    if server[hostName] ~= nil then
-      map.health="Y"
-      map.state="on"
-      map.ip=ip
-      map.weight = weight
-      map.cweight=0
-      server[hostName]=map
-      upsteamTable[loadName]=server
+	-- 判断 主机是否存在
+        if server[hostName] ~= nil then
+          map.health="Y"
+          map.state="on"
+          map.ip=ip
+          map.weight = weight
+          map.cweight=0
+          server[hostName]=map
+          upsteamTable[loadName]=server
+        else
+          map.health="Y"
+          map.state="on"
+          map.ip=ip
+          map.weight = weight
+          map.cweight=0
+          server[hostName]=map
+          upsteamTable[loadName]=server
+        end
     else
-      map.health="Y"
-      map.state="on"
-      map.ip=ip
-      map.weight = weight
-      map.cweight=0
-      server[hostName]=map
-      upsteamTable[loadName]=server
+        local server={}
+	map.state="on"
+	map.health="Y"
+        map.ip=ip
+        map.weight = weight
+        map.cweight=0
+        server[hostName]=map
+        upsteamTable[loadName]=server
     end
-	else
-		local server={}
-		map.state="on"
-		map.health="Y"
-    map.ip=ip
-    map.weight = weight
-    map.cweight=0
-		server[hostName]=map
-    upsteamTable[loadName]=server
-	end
 else
-  upsteamTable = cjson.decode(upss)
-  for k,v in pairs(upsteamTable) do
-    v.cweight=0
-    if v.ip == ip then
-      v.weight = weight
+    local map = {}
+    -- 判断 loadName 在共享区域是否存在
+    if upsteamTable[loadName]~=nil then
+	local server=upsteamTable[loadName]
+
+	-- 判断 主机是否存在
+        if server[hostName] ~= nil then
+          map.health="Y"
+          map.state="on"
+          map.ip=ip
+          map.weight = weight
+          map.cweight=0
+          server[hostName]=map
+          upsteamTable[loadName]=server
+        else
+          map.health="Y"
+          map.state="on"
+          map.ip=ip
+          map.weight = weight
+          map.cweight=0
+          server[hostName]=map
+          upsteamTable[loadName]=server
+        end
+    else
+          local server={}
+          map.health="Y"
+          map.state="on"
+          map.ip=ip
+          map.weight = weight
+          map.cweight=0
+          server[hostName]=map
+          upsteamTable[loadName]=server
     end
-  end
 end
 
 
