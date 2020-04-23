@@ -1,3 +1,11 @@
+在原作者基础上修改
+
+```
+https://github.com/p664940448/DLB
+```
+
+
+
 ### win
 
 复制 win 目录下所有文件到 openresty 根目录
@@ -9,16 +17,6 @@
 ```bash
 cp linux/* /usr/local/openresty/nginx
 ```
-
-
-
-在原作者基础上修改
-
-```
-https://github.com/p664940448/DLB
-```
-
-
 
 
 
